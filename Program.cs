@@ -7,10 +7,10 @@ namespace Assignment
         public static void Main(String[] args)
         {
 
-            BankAccount account = new BankAccount(9,12,2021);
+            BankAccount account = new BankAccount(9, 12, 2021);
             account.AccountNo = 5556442137912941;
             account.AccountOwner = "Mohanad";
-            account.Balance =100;
+            account.Balance = 100;
             account.Deposite(50);
             account.Withdraw(100);
             account.Display();
@@ -73,7 +73,7 @@ namespace Assignment
             }
             else
             {
-                Console.Write("{0:00}/{1:00}/{2:0000}",Day, Month, Year);
+                Console.Write("{0:00}/{1:00}/{2:0000}", Day, Month, Year);
             }
 
         }
@@ -106,7 +106,7 @@ namespace Assignment
         Date openDate;
         public Date OpenDate
         {
-            
+
             get { return openDate; }
             set { openDate = value; }
         }
@@ -121,7 +121,7 @@ namespace Assignment
             OpenDate.Year = year;
             OpenDate.Month = month;
             OpenDate.Day = day;
-            
+
         }
 
         public double Deposite(int amount)
@@ -138,7 +138,7 @@ namespace Assignment
         }
         public void Display()
         {
-            Console.Write($"Account Owner: {AccountOwner} \nAccount Number: {AccountNo:0000 0000 0000 0000} \nBalance: {Balance} \nOpen Date: ") ;
+            Console.Write($"Account Owner: {AccountOwner} \nAccount Number: {AccountNo:0000 0000 0000 0000} \nBalance: {Balance} \nOpen Date: ");
             OpenDate.Display();
         }
     }
