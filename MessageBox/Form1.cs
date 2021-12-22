@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,8 +35,13 @@ namespace GUI_Section
             string display = $"Name: {name}\r\nAge: {age}";
             if (radioButton1.Checked)
                 display += $"\r\nGender: {radioButton1.Text}";
-            else
+            else if (radioButton2.Checked)
                 display += $"\r\nGender: {radioButton2.Text}";
+            else
+            {
+                MessageBox.Show($"Please select your {groupBox1.Text}", "Incomplete", MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
+                return;
+            }
 
             if (ABp.Checked)
                 display += $"\r\nBlood Type: {ABp.Text}";
@@ -51,8 +57,13 @@ namespace GUI_Section
                 display += $"\r\nBlood Type: {Bn.Text}";
             else if (Op.Checked)
                 display += $"\r\nBlood Type: {Op.Text}";
-            else
+            else if(On.Checked)
                 display += $"\r\nBlood Type: {On.Text}";
+            else
+            {
+                MessageBox.Show($"Please Select Your {groupBox2.Text}", "Incomplete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                return;
+            }
 
 
             textBox3.Text = display;
@@ -69,5 +80,6 @@ namespace GUI_Section
             else
                 e.Cancel = true;
         }
+       
     }
 }
